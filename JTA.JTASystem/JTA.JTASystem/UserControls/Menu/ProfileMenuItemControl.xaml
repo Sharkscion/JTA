@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="JTA.JTASystem.ProfileMenuItemControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             mc:Ignorable="d" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:JTA.JTASystem"
+             xmlns:core="clr-namespace:JTA.JTASystem.Core;assembly=JTA.JTASystem.Core"
+             d:DataContext ="{d:DesignInstance {x:Type core:ProfileMenuItemDesign}, IsDesignTimeCreatable=True}"
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <Button CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=DataContext}" 
+            Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                            AncestorType=local:SideNavigationMenuControl}, 
+                                            Path=DataContext.SelectItem}">
+        
+        <Button.Template>
+            <ControlTemplate TargetType="Button">
+
+                <Grid HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Margin="0 20"
+                      Background="Transparent">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Border Background="{Binding InitialContainerRBG, Converter={local:StringRGBToBrushConverter}}" 
+                        Height="25"
+                        Margin="5 0 15 0"
+                        HorizontalAlignment="Left"
+                        Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}"
+                        CornerRadius="{Binding ActualHeight, RelativeSource={RelativeSource Self}}">
+
+                        <!-- Profile picture initials -->
+                        <TextBlock Text="{Binding Initials}"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Foreground="{StaticResource ForegroundLightestBrush}"
+                            FontSize="{StaticResource FontSizeSmaller}"
+                            FontFamily="{StaticResource LatoBold}" />
+                    </Border>
+
+
+                    <!---User detail information and icon container-->
+                    <Grid Grid.Column="1"
+                          Grid.ColumnSpan="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!---User detail information container-->
+                        <StackPanel Orientation="Vertical"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center">
+
+                            <TextBlock Text="{Binding Name}"
+                                x:Name="LblUserName"
+                                FontFamily="{StaticResource LatoBold}"
+                                Foreground="{StaticResource ForegroundLightestBrush}"
+                                FontSize="{StaticResource FontSizeRegular}"
+                                Margin="0 0 0 5"/>
+
+                            <TextBlock Text="{Binding Position}"
+                                FontFamily="{StaticResource LatoRegular}"
+                                Foreground="{StaticResource ForegroundLightBrush}"
+                                FontSize="{StaticResource FontSizeSmaller}"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+                <ControlTemplate.Triggers>
+                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource AncestorType=Grid}, Path=IsMouseOver}" Value="True">
+                        <Setter Property="Foreground" TargetName="LblUserName" Value="{StaticResource RedBrush}"/>
+                      </DataTrigger>
+                </ControlTemplate.Triggers>
+            </ControlTemplate>
+        </Button.Template>
+    </Button>
+    
+</UserControl>

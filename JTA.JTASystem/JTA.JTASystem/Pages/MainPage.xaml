@@ -1,0 +1,22 @@
+﻿<local:BasePage 
+      x:TypeArguments="core:MainPageViewModel"
+      x:Class="JTA.JTASystem.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JTA.JTASystem"
+      xmlns:core="clr-namespace:JTA.JTASystem.Core;assembly=JTA.JTASystem.Core"
+      mc:Ignorable="d" 
+      d:DataContext ="{d:DesignInstance {x:Type core:MainPageDesign}, IsDesignTimeCreatable=True}"
+      d:DesignHeight="300" d:DesignWidth="580">
+
+    <Grid Background="{StaticResource BackgroundLighterBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+
+        <local:SideNavigationMenuControl DataContext="{Binding SideNavigationMenu}"/>
+    </Grid>
+</local:BasePage>

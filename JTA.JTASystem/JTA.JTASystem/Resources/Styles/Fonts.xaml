@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:JTA.JTASystem"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    
+    <FontFamily x:Key="LatoRegular">pack://appliction;,,,/Resources/Fonts/#Lato Regular</FontFamily>
+    <FontFamily x:Key="LatoLight">pack://appliction;,,,/Resources/Fonts/#Lato Light</FontFamily>
+    <FontFamily x:Key="LatoLightItalic">pack://appliction;,,,/Resources/Fonts/#Lato Light Italic</FontFamily>
+    <FontFamily x:Key="LatoBold">pack://appliction;,,,/Resources/Fonts/#Lato Bold</FontFamily>
+    <FontFamily x:Key="LatoMedium">pack://appliction;,,,/Resources/Fonts/#Lato Medium</FontFamily>
+
+    <FontFamily x:Key="FontAwesome">pack://appliction;,,,/Resources/Fonts/fontawesome-webfont.ttf#FontAwesome</FontFamily>
+
+    <!--Font awesome icons-->
+    <system:String x:Key="FAChevronDownIcon">&#xf078;</system:String>
+    <system:String x:Key="FASpinnerIcon">&#xf110;</system:String>
+</ResourceDictionary>

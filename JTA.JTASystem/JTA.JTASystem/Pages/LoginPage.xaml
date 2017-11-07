@@ -1,0 +1,73 @@
+﻿<local:BasePage 
+      x:TypeArguments="core:LoginViewModel"
+      x:Class="JTA.JTASystem.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JTA.JTASystem"
+      xmlns:core="clr-namespace:JTA.JTASystem.Core;assembly=JTA.JTASystem.Core"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto"
+                  Background="{StaticResource BackgroundLightestBrush}">
+        
+        <StackPanel 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+
+            <!---Logo of the company-->
+            <Image Source="/Resources/Logo/JTA-Logo-XXL.png"
+                   Height="40"
+                   Margin="0 0 0 8"/>
+            
+            <!---Welcome message container-->
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0 0 0 24">
+                <!--<Glyphs
+                       UnicodeString       = "Username"
+                       Indices             = ",85;,60;,60;,60;,60;,60;,85;"
+                       FontUri             = "/Resources/Fonts/Lato-Regular.ttf"
+                       Fill                = "Black"
+                       FontRenderingEmSize = "12" 
+                    />-->
+                <TextBlock Text="Hello! "
+                           FontFamily="{StaticResource LatoLightItalic}"
+                           FontSize="{DynamicResource FontSizeLarge}"
+/>
+
+                <TextBlock Text="Please login to continue."
+                           FontFamily="{StaticResource LatoLight}"
+                           FontSize="{DynamicResource FontSizeLarge}"/>
+            </StackPanel>
+            
+            <!---Username container-->
+            <StackPanel>
+                <Label Content="Username"
+                       FontSize="{DynamicResource FontSizeSmaller}" 
+                       Style="{StaticResource BaseStyleLabel}"/>
+
+                <TextBox x:Name="txtUsername"
+                         local:IsFocusedProperty.Value="True"/>
+            </StackPanel>
+
+            <!---Password container-->
+            <StackPanel>
+                <Label Content="Password"
+                       FontSize="{DynamicResource FontSizeSmaller}" 
+                       Style="{StaticResource BaseStyleLabel}"/>
+
+                <PasswordBox x:Name="txtPassword" 
+                             MaxWidth="260"/>
+            </StackPanel>
+
+            <Button Content="Login"
+                    Background="{StaticResource RedBrush}"
+                    Foreground="{StaticResource ForegroundLightestBrush}"/>
+        </StackPanel>
+        
+    </ScrollViewer>
+</local:BasePage>
