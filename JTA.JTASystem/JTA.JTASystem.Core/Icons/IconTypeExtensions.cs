@@ -11,24 +11,19 @@
             // Return a FontAwesome string based on the icon type
             switch (type)
             {
-                case IconType.Dashboard:
-                    return "\uf0e4";
+                case IconType.Dashboard:  return "\uf0e4";
 
-                case IconType.Files:
-                    return "\uf0c5";
+                case IconType.Files: return "\uf0c5";
 
-                case IconType.Cubes:
-                    return "\uf1b3";
+                case IconType.Cubes: return "\uf1b3";
 
-                case IconType.Group:
-                    return "\uf0c0";
+                case IconType.Group: return "\uf0c0";
 
-                case IconType.Money:
-                    return "\uf0c0";
+                case IconType.Money: return "\uf0c0";
 
-                case IconType.PieChart:
-                    return "\uf200";
+                case IconType.PieChart:  return "\uf200";
 
+                case IconType.IssuedBy: return "\uf08d";
                 // If none found, return null
                 default:
                     return null;

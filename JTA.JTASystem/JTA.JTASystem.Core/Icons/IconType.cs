@@ -9,7 +9,14 @@ namespace JTA.JTASystem.Core
         Cubes,
         Group,
         Money,
-        PieChart
+        PieChart,
+        IssuedBy,
+        TIN,
+        SalesPerson,
+        Information,
+
+
+       
         
     }
 }

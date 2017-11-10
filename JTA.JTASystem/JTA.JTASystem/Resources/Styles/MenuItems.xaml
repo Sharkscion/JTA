@@ -11,7 +11,7 @@
         <ResourceDictionary Source="Texts.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type core:BaseMenuItemViewModel}">
+    <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type core:MenuItemVM}">
 
         <Grid x:Name="MyGrid" RenderTransformOrigin="0.5,0"
               Panel.ZIndex="3"

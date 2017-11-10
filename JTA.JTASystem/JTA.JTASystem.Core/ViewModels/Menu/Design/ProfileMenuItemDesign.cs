@@ -1,6 +1,6 @@
 ﻿namespace JTA.JTASystem.Core
 {
-    public class ProfileMenuItemDesign : ProfileMenuViewModel
+    public class ProfileMenuItemDesign : ProfileMenuVM
     {
         public static ProfileMenuItemDesign Instance => new ProfileMenuItemDesign();
 

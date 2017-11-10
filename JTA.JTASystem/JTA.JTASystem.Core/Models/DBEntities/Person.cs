@@ -15,5 +15,13 @@ namespace JTA.JTASystem.Core
 
         [InverseProperty("Person")]
         public virtual ICollection<Address> Addresses { get; set; }
+
+        [InverseProperty("Person")]
+        public virtual ICollection<Document> Documents { get; set; }   
+        
+
+        [InverseProperty("Person")]
+        public virtual ICollection<ContactInformation> ContactInformations { get; set; }
+
     }
 }

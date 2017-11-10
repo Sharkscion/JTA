@@ -23,7 +23,7 @@ namespace JTA.JTASystem
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new WindowViewModel(this);
+            DataContext = new WindowVM(this);
         }
     }
 }

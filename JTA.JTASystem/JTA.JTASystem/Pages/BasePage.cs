@@ -13,26 +13,26 @@ namespace JTA.JTASystem
         /// <summary>
         /// The view model associated with this page
         /// </summary>
-        private object mViewModel;
+        private object mVM;
 
 
-        public object ViewModelObject
+        public object VMObject
         {
-            get => mViewModel;
+            get => mVM;
             set
             {
                 // If nothing has changed, return
-                if (mViewModel == value)
+                if (mVM == value)
                     return;
 
                 // Update the value 
-                mViewModel = value;
+                mVM = value;
 
                 // Fire the view model 
-                OnViewModelChanged();
+                OnVMChanged();
 
                 // Set the data context of this page to the updated view model
-                DataContext = mViewModel;
+                DataContext = mVM;
 
             }
         }
@@ -40,7 +40,7 @@ namespace JTA.JTASystem
         /// <summary>
         /// Fired when the view model changes
         /// </summary>
-        private void OnViewModelChanged()
+        private void OnVMChanged()
         {
         }
     }
@@ -50,15 +50,15 @@ namespace JTA.JTASystem
     /// </summary>
     /// <typeparam name="VM"></typeparam>
     public class BasePage <VM> : BasePage
-        where VM : BaseViewModel, new()
+        where VM : BaseVM, new()
     {
         /// <summary>
         ///  The view model associated with this page
         /// </summary>
-        public VM ViewModel
+        public VM VM
         {
-            get => (VM)ViewModelObject;
-            set => ViewModelObject = value;
+            get => (VM)VMObject;
+            set => VMObject = value;
         }
 
         #region Constructors
@@ -69,21 +69,21 @@ namespace JTA.JTASystem
         public BasePage() : base()
         {
             // TODO: Create/set a default view model
-            // ViewModel = 
+            // VM = 
         }
 
 
         /// <summary>
         /// A constructor with specific view model
         /// </summary>
-        /// <param name="specificViewModel">The specific view model to use if there are any</param>
-        public BasePage(VM specificViewModel = null) : base()
+        /// <param name="specificVM">The specific view model to use if there are any</param>
+        public BasePage(VM specificVM = null) : base()
         {
-            if (specificViewModel != null)
-                ViewModel = specificViewModel;
+            if (specificVM != null)
+                VM = specificVM;
             else
                 // TODO: Create a default view model
-                ViewModel = IoC.Get<VM>();
+                VM = IoC.Get<VM>();
 
         }
 

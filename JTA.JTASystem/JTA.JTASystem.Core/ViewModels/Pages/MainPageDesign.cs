@@ -3,20 +3,20 @@ using System.Collections.ObjectModel;
 
 namespace JTA.JTASystem.Core
 {
-    public class MainPageDesign : MainPageViewModel
+    public class MainPageDesign : MainPageVM
     {
         public MainPageDesign()
         {
-            SideNavigationMenu = new MenuStructureViewModel
+            SideNavigationMenu = new MenuStructureVM
             {
-                MenuItems = new List<BaseMenuItemViewModel>
+                MenuItems = new List<MenuItemVM>
                 {
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                        MenuItemType = MenuItemType.Profile,
                        DirectoryType = MenuDirectoryType.Parent,
-                       Content = new ProfileMenuViewModel
+                       Content = new ProfileMenuVM
                        {
                            InitialContainerRBG = "3490DC",
                            Initials = "ST",
@@ -24,23 +24,23 @@ namespace JTA.JTASystem.Core
                            Position = "Vice Manager"
                        },
 
-                       Children = new List<BaseMenuItemViewModel>
+                       Children = new List<MenuItemVM>
                        {
-                           new BaseMenuItemViewModel
+                           new MenuItemVM
                            {
                                MenuItemType = MenuItemType.TextAndIcon,
                                DirectoryType = MenuDirectoryType.Child,
-                               Content = new TextIconMenuViewModel
+                               Content = new TextIconEntryVM
                                {
                                    Label = "Edit Profile"
                                }
                            },
 
-                           new BaseMenuItemViewModel
+                           new MenuItemVM
                            {
                                MenuItemType = MenuItemType.TextAndIcon,
                                DirectoryType = MenuDirectoryType.Child,
-                               Content = new TextIconMenuViewModel
+                               Content = new TextIconEntryVM
                                {
                                    Label = "Logout"
                                }
@@ -50,64 +50,64 @@ namespace JTA.JTASystem.Core
 
                     },
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                         MenuItemType = MenuItemType.TextAndIcon,
                         DirectoryType = MenuDirectoryType.Child,
-                        Content = new TextIconMenuViewModel
+                        Content = new TextIconEntryVM
                         {
                             Icon = IconType.Dashboard,
                             Label = "Dashboard"
                         }
                     },
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                         MenuItemType = MenuItemType.TextAndIcon,
                         DirectoryType = MenuDirectoryType.Parent,
-                        Content = new TextIconMenuViewModel
+                        Content = new TextIconEntryVM
                         {
                             Icon = IconType.Files,
                             Label = "Documents"
                         },
 
-                        Children = new List<BaseMenuItemViewModel>
+                        Children = new List<MenuItemVM>
                         {
-                            new BaseMenuItemViewModel
+                            new MenuItemVM
                            {
                                MenuItemType = MenuItemType.TextAndIcon,
                                DirectoryType = MenuDirectoryType.Child,
-                               Content = new TextIconMenuViewModel
+                               Content = new TextIconEntryVM
                                {
                                    Label = "Purchase Orders"
                                }
                            },
 
-                           new BaseMenuItemViewModel
+                           new MenuItemVM
                            {
                                MenuItemType = MenuItemType.TextAndIcon,
                                DirectoryType = MenuDirectoryType.Child,
-                               Content = new TextIconMenuViewModel
+                               Content = new TextIconEntryVM
                                {
                                    Label = "Order Slips"
                                }
                            },
 
-                           new BaseMenuItemViewModel
+                           new MenuItemVM
                            {
                                MenuItemType = MenuItemType.TextAndIcon,
                                DirectoryType = MenuDirectoryType.Child,
-                               Content = new TextIconMenuViewModel
+                               Content = new TextIconEntryVM
                                {
                                    Label = "Sales Invoices"
                                }
                            },
 
-                           new BaseMenuItemViewModel
+                           new MenuItemVM
                            {
                                MenuItemType = MenuItemType.TextAndIcon,
                                DirectoryType = MenuDirectoryType.Child,
-                               Content = new TextIconMenuViewModel
+                               Content = new TextIconEntryVM
                                {
                                    Label = "Return Slips"
                                }
@@ -115,44 +115,44 @@ namespace JTA.JTASystem.Core
                         }
                     },
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                         MenuItemType = MenuItemType.TextAndIcon,
                         DirectoryType = MenuDirectoryType.Child,
-                        Content = new TextIconMenuViewModel
+                        Content = new TextIconEntryVM
                         {
                             Icon = IconType.Cubes,
                             Label = "Inventories"
                         }
                     },
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                         MenuItemType = MenuItemType.TextAndIcon,
                         DirectoryType = MenuDirectoryType.Child,
-                        Content = new TextIconMenuViewModel
+                        Content = new TextIconEntryVM
                         {
                             Icon = IconType.Group,
                             Label = "Stakeholders"
                         }
                     },
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                         MenuItemType = MenuItemType.TextAndIcon,
                         DirectoryType = MenuDirectoryType.Child,
-                        Content = new TextIconMenuViewModel
+                        Content = new TextIconEntryVM
                         {
                             Icon = IconType.Money,
                             Label = "Payments"
                         }
                     },
 
-                    new BaseMenuItemViewModel
+                    new MenuItemVM
                     {
                         MenuItemType = MenuItemType.TextAndIcon,
                         DirectoryType = MenuDirectoryType.Child,
-                        Content = new TextIconMenuViewModel
+                        Content = new TextIconEntryVM
                         {
                             Icon = IconType.PieChart,
                             Label = "Reports"

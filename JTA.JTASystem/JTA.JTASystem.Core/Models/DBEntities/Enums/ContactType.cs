@@ -2,5 +2,9 @@
 {
     public enum ContactType
     {
+        Telephone,
+        Fax,
+        Email,
+        Mobile,
     }
 }

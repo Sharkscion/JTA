@@ -11,25 +11,7 @@ namespace JTA.JTASystem.Core
 
         public string Name { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
-        public string Description { get; set; }
-
-        [Column(TypeName = "decimal(13,4)")]
-        public decimal UnitPrice { get; set; }
-
         public Unit Unit { get; set; }
-
-        [Column(TypeName = "decimal(13,4)")]
-        public decimal BoxQuantity { get; set; }
-
-        [Column(TypeName = "decimal(13,4)")]
-        public decimal InitialStocks { get; set; }
-
-        [Column(TypeName = "decimal(13,4)")]
-        public decimal Stocks { get; set; }
-
-        [Column(TypeName = "decimal(13,4)")]
-        public decimal MinimumQuantity { get; set; }
 
         [Column(TypeName = "bit")]
         public bool IsTracked { get; set; }
@@ -37,7 +19,7 @@ namespace JTA.JTASystem.Core
         [Column(TypeName = "ntext")]
         public string Note { get; set; }
 
-        public ProductCategory Category { get; set; }
+        public virtual ProductCategory ProductCategory { get; set; }
 
         public int? ReferencedProductId { get; set; }
 
@@ -46,5 +28,11 @@ namespace JTA.JTASystem.Core
 
         [InverseProperty("Product")]
         public virtual ICollection<ProductDiscount> Discounts { get; set; }
+
+        [InverseProperty("Product")]
+        public virtual ICollection<ProductVariant> Variants { get; set; }
+
+        [InverseProperty("Product")]
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

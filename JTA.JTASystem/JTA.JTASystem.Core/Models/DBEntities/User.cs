@@ -16,7 +16,6 @@ namespace JTA.JTASystem.Core
             set => PasswordStored = PasswordSecurityHelper.Encrypt(value);
         }
 
-        [InverseProperty("IssuedBy")]
-        public virtual ICollection<Document> DocumentsIssued { get; set; }
+        
     }
 }

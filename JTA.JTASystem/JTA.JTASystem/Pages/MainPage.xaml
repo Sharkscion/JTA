@@ -1,5 +1,5 @@
 ﻿<local:BasePage 
-      x:TypeArguments="core:MainPageViewModel"
+      x:TypeArguments="core:MainPageVM"
       x:Class="JTA.JTASystem.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

@@ -5,7 +5,7 @@ namespace JTA.JTASystem
     /// <summary>
     /// Interaction logic for LoginPage.xaml
     /// </summary>
-    public partial class LoginPage : BasePage<LoginViewModel>
+    public partial class LoginPage : BasePage<LoginVM>
     {
         #region Constructor
 
@@ -20,7 +20,7 @@ namespace JTA.JTASystem
         /// <summary>
         /// Constructor with specific view model
         /// </summary>
-        public LoginPage(LoginViewModel specificViewModel) : base(specificViewModel)
+        public LoginPage(LoginVM specificVM) : base(specificVM)
         {
             InitializeComponent();
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace JTA.JTASystem.Core
 {
-    public class TextIconMenuItemDesign : TextIconMenuViewModel
+    public class TextIconMenuItemDesign : TextIconEntryVM
     {
         public static TextIconMenuItemDesign Instance => new TextIconMenuItemDesign();
 

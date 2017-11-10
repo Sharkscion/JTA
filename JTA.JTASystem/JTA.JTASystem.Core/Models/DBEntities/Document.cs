@@ -21,33 +21,28 @@ namespace JTA.JTASystem.Core
 
         public Terms Terms { get; set; }
 
-        public int PersonId { get; set; }
-
-        public int AddressId { get; set; }
-
-        public int IssuedById { get; set; }
-
-        public int SalesPersonId { get; set; }
-
-        [ForeignKey("PersonId")]
         public virtual Person Person { get; set; }
 
-        [ForeignKey("AddressId")]
         public virtual Address Address { get; set; }
 
-        [ForeignKey("IssuedById")]
-        public virtual Person IssuedBy { get; set; }
+        public int? IssuedById { get; set; }
+
+        public int? SalesPersonId { get; set; }
 
         [ForeignKey("SalesPersonId")]
-        public virtual Person SalesPerson { get; set; }
+        public virtual Employee SalesPerson { get; set; }
+
+        [ForeignKey("IssuedById")]       
+        public virtual Employee IssuedBy { get; set; }
 
         [Required, DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Timestamp]
         public byte[] Timestamp { get; set; }
         
-        public Status.Document Status { get; set; }
+        public Status.DocumentStatus Status { get; set; }
 
-        [Column(TypeName ="decimal(13,4)")]
+        public Status.DocumentPaymentStatus PaymentStatus { get; set; }
+
         public decimal TotalAmount { get; set; }
 
         [Column(TypeName = "ntext")]

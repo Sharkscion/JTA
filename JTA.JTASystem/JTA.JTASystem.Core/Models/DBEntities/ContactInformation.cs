@@ -10,17 +10,14 @@ namespace JTA.JTASystem.Core
         [Key]
         public string ContactValue { get; set; }
 
-        public int PersonId { get; set; }
-
         public int BranchNo { get; set; }
 
         public ContactType Type { get; set; }
 
         public string ContactPerson { get; set; }
 
-        public Status.ContactInformation Status { get; set; }
+        public Status.ContactInformationStatus Status { get; set; }
 
-        [ForeignKey("PersonId")]
         public virtual Person Person { get; set; }
     }
 }

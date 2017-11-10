@@ -7,6 +7,5 @@
     {
         Login,
         MainPage,
-        Dummy
     }
 }

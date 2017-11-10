@@ -5,9 +5,9 @@ namespace JTA.JTASystem.Core
 {
     public enum CustomerLevel
     {
-        1,
-        2,
-        3,
-        4
+        One = 1,
+        Two,
+        Three,
+        Four
     }
 }

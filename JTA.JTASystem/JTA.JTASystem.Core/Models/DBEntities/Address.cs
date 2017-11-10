@@ -7,23 +7,29 @@ namespace JTA.JTASystem.Core
     {
         public int Id { get; set; }
 
-        public int PersonId { get; set; }
-
-        [ForeignKey("PersonId")]
         public virtual Person Person { get; set; }
 
         public int BranchNo { get; set; }
 
         public string AddressLine { get; set; }
 
-        public string Street { get; set; }
+        public string BarangayCode { get; set; }
 
-        public string City { get; set; }
+        public string CityMunicipalityCode { get; set; }
 
-        public int RouteId { get; set; }
+        public string ProvinceCode { get; set; }
+
+        [ForeignKey("BarangayCode")]
+        public virtual Barangay Barangay { get; set; }
+
+        [ForeignKey("CityMunicipalityCode")]
+        public virtual CityMunicipality CityMunicipality { get; set; }
+
+        [ForeignKey("ProvinceCode")]
+        public virtual Province Province { get; set; }
 
         public virtual Route Route { get; set; }
 
-        public Status.Address Status { get; set; }
+        public Status.AddressStatus Status { get; set; }
     }
 }

@@ -10,14 +10,16 @@ namespace JTA.JTASystem.Core
         [Column(TypeName = "date")]
         public DateTime DateEmployed{ get; set;}
 
-        [Column(TypeName = "decimal(13, 4)")]
         public decimal Salary { get; set; }
 
         [InverseProperty("SalesPerson")]
         public virtual ICollection<Customer> Customers { get; set; }
 
+        [InverseProperty("IssuedBy")]
+        public virtual ICollection<Document> DocumentsIssued { get; set; }
+
         [InverseProperty("SalesPerson")]
-        public virtual ICollection<Document> DocumentsHandled { get; set; }
+        public virtual ICollection<Document> DocumentsAssigned { get; set; }
 
     }
 }

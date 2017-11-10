@@ -42,6 +42,7 @@
     <Reference Include="Ninject, Version=3.3.3.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.3.3\lib\net45\Ninject.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationFramework" />
     <Reference Include="PropertyChanged, Version=2.1.4.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.2.1.4\lib\netstandard1.0\PropertyChanged.dll</HintPath>
       <Private>False</Private>
@@ -58,33 +59,56 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\PasswordSecurityHelper.cs" />
+    <Compile Include="Migrations\201711081130468_Initial.cs" />
+    <Compile Include="Migrations\201711081130468_Initial.Designer.cs">
+      <DependentUpon>201711081130468_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711081533028_UpdatedOrderDetailEntity.cs" />
+    <Compile Include="Migrations\201711081533028_UpdatedOrderDetailEntity.Designer.cs">
+      <DependentUpon>201711081533028_UpdatedOrderDetailEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711081539202_UpdatedProductEntity.cs" />
+    <Compile Include="Migrations\201711081539202_UpdatedProductEntity.Designer.cs">
+      <DependentUpon>201711081539202_UpdatedProductEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationPage.cs" />
     <Compile Include="Models\Colors\Color.cs" />
     <Compile Include="Models\Colors\ColorGenerator.cs" />
     <Compile Include="Models\DBEntities\Address.cs" />
+    <Compile Include="Models\DBEntities\Barangay.cs" />
+    <Compile Include="Models\DBEntities\CityMunicipality.cs" />
     <Compile Include="Models\DBEntities\ContactInformation.cs" />
+    <Compile Include="Models\DBEntities\CreditRating.cs" />
     <Compile Include="Models\DBEntities\Customer.cs" />
     <Compile Include="Models\DBEntities\CustomerBlockedProducts.cs" />
     <Compile Include="Models\DBEntities\CustomerBranch.cs" />
     <Compile Include="Models\DBEntities\Document.cs" />
     <Compile Include="Models\DBEntities\Employee.cs" />
     <Compile Include="Models\DBEntities\Enums\ContactType.cs" />
-    <Compile Include="Models\DBEntities\Enums\CreditRating.cs" />
     <Compile Include="Models\DBEntities\Enums\CustomerLevel.cs" />
     <Compile Include="Models\DBEntities\Enums\DocumentType.cs" />
-    <Compile Include="Models\DBEntities\Enums\ProductCategory.cs" />
     <Compile Include="Models\DBEntities\Enums\Status.cs" />
+    <Compile Include="Models\DBEntities\JTAContext.cs" />
     <Compile Include="Models\DBEntities\OrderDetail.cs" />
     <Compile Include="Models\DBEntities\Person.cs" />
-    <Compile Include="Models\DBEntities\Enums\PersonType.cs" />
+    <Compile Include="Models\DBEntities\PersonType.cs" />
+    <Compile Include="Models\DBEntities\PriceUpdate.cs" />
     <Compile Include="Models\DBEntities\Product.cs" />
+    <Compile Include="Models\DBEntities\ProductCategory.cs" />
     <Compile Include="Models\DBEntities\ProductDiscount.cs" />
+    <Compile Include="Models\DBEntities\ProductVariant.cs" />
+    <Compile Include="Models\DBEntities\Province.cs" />
     <Compile Include="Models\DBEntities\PurchaseOrder.cs" />
+    <Compile Include="Models\DBEntities\Region.cs" />
     <Compile Include="Models\DBEntities\Route.cs" />
     <Compile Include="Models\DBEntities\Supplier.cs" />
     <Compile Include="Models\DBEntities\Enums\Terms.cs" />
     <Compile Include="Models\DBEntities\Enums\Unit.cs" />
     <Compile Include="Models\DBEntities\User.cs" />
+    <Compile Include="Helpers\DiscountOperationHelper.cs" />
+    <Compile Include="Models\Discounts\RateOperation.cs" />
+    <Compile Include="Models\Discounts\RateOperationCalculator.cs" />
     <Compile Include="Models\Menu\MenuDirectoryType.cs" />
     <Compile Include="Icons\IconType.cs" />
     <Compile Include="Icons\IconTypeExtensions.cs" />
@@ -97,19 +121,38 @@
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
     <Compile Include="ViewModels\Base\RelayParameterizedCommand.cs" />
     <Compile Include="ViewModels\Documents\BaseDocumentViewModel.cs" />
-    <Compile Include="ViewModels\Documents\BaseManageDocumentViewModel.cs" />
+    <Compile Include="ViewModels\Inputs\AutoCompleteComboBoxObserverViewModel.cs" />
+    <Compile Include="ViewModels\Inputs\AutoCompleteComboBoxSubjectViewModel.cs" />
+    <Compile Include="ViewModels\Inputs\BaseAutoCompleteComboBox.cs" />
+    <Compile Include="ViewModels\Inputs\TextEntryViewModel.cs" />
+    <Compile Include="ViewModels\Inputs\TextIconEntryObserverViewModel.cs" />
+    <Compile Include="ViewModels\OrderDetailTable\BaseTableRowViewModel.cs" />
+    <Compile Include="ViewModels\OrderDetailTable\DiscountItemViewModel.cs" />
+    <Compile Include="ViewModels\Base\IObserver.cs" />
+    <Compile Include="ViewModels\OrderDetailTable\OrderDetailTableViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\Pages\BaseDocumentPageViewModel.cs" />
+    <Compile Include="ViewModels\Base\ISubject.cs" />
+    <Compile Include="ViewModels\OrderDetailTable\TableColumn.cs" />
+    <Compile Include="ViewModels\OrderDetailTable\TableHeaderViewModel.cs" />
+    <Compile Include="ViewModels\OrderDetailTable\TableRowItemViewModel.cs" />
+    <Compile Include="ViewModels\Pages\Document\AddDocumentPageBuilder.cs" />
+    <Compile Include="ViewModels\Pages\Document\AddDocumentPageDesign.cs" />
+    <Compile Include="ViewModels\Pages\Document\AddDocumentPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\Document\BaseManageDocumentViewModel.cs" />
+    <Compile Include="ViewModels\Pages\Document\BaseTabViewModel.cs" />
+    <Compile Include="ViewModels\Pages\Document\EditDocumentPageBuilder.cs" />
+    <Compile Include="ViewModels\Pages\Document\EditDocumentPageViewModel.cs" />
+    <Compile Include="ViewModels\Pages\Document\ManageDocumentPageBuilder.cs" />
     <Compile Include="ViewModels\Pages\MainPageDesign.cs" />
     <Compile Include="ViewModels\Pages\MainPageViewModel.cs" />
     <Compile Include="Models\Menu\MenuItem.cs" />
     <Compile Include="Models\Menu\MenuItemType.cs" />
-    <Compile Include="ViewModels\Menu\BaseMenuItemViewModel.cs" />
+    <Compile Include="ViewModels\Menu\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\Menu\Design\ProfileMenuItemDesign.cs" />
     <Compile Include="ViewModels\Menu\Design\MenuStructureDesign.cs" />
     <Compile Include="ViewModels\Menu\Design\TextIconMenuItemDesign.cs" />
     <Compile Include="ViewModels\Menu\ProfileMenuViewModel.cs" />
-    <Compile Include="ViewModels\Menu\TextIconMenuViewModel.cs" />
+    <Compile Include="ViewModels\Inputs\TextIconEntryViewModel.cs" />
     <Compile Include="ViewModels\Menu\MenuStructureViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +161,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711081130468_Initial.resx">
+      <DependentUpon>201711081130468_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711081533028_UpdatedOrderDetailEntity.resx">
+      <DependentUpon>201711081533028_UpdatedOrderDetailEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711081539202_UpdatedProductEntity.resx">
+      <DependentUpon>201711081539202_UpdatedProductEntity.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -24,23 +24,25 @@ namespace JTA.JTASystem.Core
 
         public int ProductId { get; set; }
 
-        [Column(TypeName = "decimal(13,4)")]
+        public int? ProductVariantId { get; set; }
+
         public decimal Quantity { get; set; }
 
-        [Column(TypeName = "decimal(13,4)")]
         public decimal UnitPrice { get; set; }
 
         public Unit Unit { get; set; }
 
         public string Discount { get; set; }
 
-        [Column(TypeName = "decimal(13,4)")]
         public decimal SubAmount { get; set; }
 
-        public Status.Order Status {get; set;}
+        public Status.OrderStatus Status {get; set;}
 
         [ForeignKey("ProductId")]
         public virtual Product Product { get; set; }
+
+        [ForeignKey("ProductVariantId")]
+        public virtual ProductVariant ProductVariant { get; set; }
 
         public virtual Document Document{ get; set; }
     }

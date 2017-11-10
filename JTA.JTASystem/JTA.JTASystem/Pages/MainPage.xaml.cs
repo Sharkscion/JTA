@@ -6,7 +6,7 @@ namespace JTA.JTASystem
     /// <summary>
     /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class MainPage : BasePage<MainPageViewModel>
+    public partial class MainPage : BasePage<MainPageVM>
     {
      
         public MainPage()
@@ -17,7 +17,7 @@ namespace JTA.JTASystem
         /// <summary>
         /// Constructor with specific view model
         /// </summary>
-        public MainPage(MainPageViewModel specificViewModel) : base(specificViewModel)
+        public MainPage(MainPageVM specificVM) : base(specificVM)
         {
             InitializeComponent();
         }

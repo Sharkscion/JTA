@@ -144,10 +144,10 @@
         <Grid>
 
             <local:PageHost 
-                   CurrentPage="{Binding ApplicationViewModel.CurrentPage,
-                                        Source={x:Static local:ViewModelLocator.Instance}}"
-                   CurrentPageViewModel="{Binding ApplicationViewModel.CurrentPageViewModel,
-                                        Source={x:Static local:ViewModelLocator.Instance}}"  />
+                   CurrentPage="{Binding ApplicationVM.CurrentPage,
+                                        Source={x:Static local:VMLocator.Instance}}"
+                   CurrentPageVM="{Binding ApplicationVM.CurrentPageVM,
+                                        Source={x:Static local:VMLocator.Instance}}"  />
 
             <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
@@ -162,7 +162,7 @@
             <!-- Settings page -->
             <!--<local:SettingsControl Grid.ColumnSpan="2"
                                    Panel.ZIndex="9"
-                                   local:AnimateSlideInFromBottomMarginProperty.Value="{Binding ApplicationViewModel.SettingsMenuVisible, Source={x:Static local:ViewModelLocator.Instance}}"
+                                   local:AnimateSlideInFromBottomMarginProperty.Value="{Binding ApplicationVM.SettingsMenuVisible, Source={x:Static local:VMLocator.Instance}}"
                                    />-->
 
             <!-- Dimmed overlay -->
@@ -175,17 +175,17 @@
             </Border>-->
 
             <!--<local:PageHost Grid.Column="1" 
-                   CurrentPage="{Binding ApplicationViewModel.CurrentPage,
-                                        Source={x:Static local:ViewModelLocator.Instance}}"
-                   CurrentPageViewModel="{Binding ApplicationViewModel.CurrentPageViewModel,
-                                        Source={x:Static local:ViewModelLocator.Instance}}"                            
+                   CurrentPage="{Binding ApplicationVM.CurrentPage,
+                                        Source={x:Static local:VMLocator.Instance}}"
+                   CurrentPageVM="{Binding ApplicationVM.CurrentPageVM,
+                                        Source={x:Static local:VMLocator.Instance}}"                            
                             />-->
 
             <!-- Side Menu -->
             <!--<local:SideMenuControl 
                 Width="300" 
-                local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible, 
-                                     Source={x:Static local:ViewModelLocator.Instance}}">
+                local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationVM.SideMenuVisible, 
+                                     Source={x:Static local:VMLocator.Instance}}">
 
                 <local:ChatListControl />
 

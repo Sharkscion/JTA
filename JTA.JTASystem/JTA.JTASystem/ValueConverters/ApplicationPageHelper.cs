@@ -22,10 +22,10 @@ namespace JTA.JTASystem
             switch (page)
             {
                 case ApplicationPage.Login:
-                    return new LoginPage(viewModel as LoginViewModel);
+                    return new LoginPage(viewModel as LoginVM);
 
                 case ApplicationPage.MainPage:
-                    return new MainPage(viewModel as MainPageViewModel);
+                    return new MainPage(viewModel as MainPageVM);
                 default:
                     Debugger.Break();
                     return null;

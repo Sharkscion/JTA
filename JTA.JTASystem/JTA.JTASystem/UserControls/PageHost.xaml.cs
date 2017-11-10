@@ -25,10 +25,10 @@ namespace JTA.JTASystem
         /// <summary>
         /// The current page view model associated with the current page
         /// </summary>
-        public BaseViewModel CurrentPageViewModel
+        public BaseVM CurrentPageVM
         {
-            get => (BaseViewModel)GetValue(CurrentPageViewModelProperty);
-            set => SetValue(CurrentPageViewModelProperty, value);
+            get => (BaseVM)GetValue(CurrentPageVMProperty);
+            set => SetValue(CurrentPageVMProperty, value);
         }
 
 
@@ -42,11 +42,11 @@ namespace JTA.JTASystem
 
 
         /// <summary>
-        /// Registers <see cref="CurrentPageViewModel"/> as a dependency property
+        /// Registers <see cref="CurrentPageVM"/> as a dependency property
         /// </summary>
-        public static readonly DependencyProperty CurrentPageViewModelProperty =
-            DependencyProperty.Register(nameof(CurrentPageViewModel),
-                typeof(BaseViewModel), typeof(PageHost),
+        public static readonly DependencyProperty CurrentPageVMProperty =
+            DependencyProperty.Register(nameof(CurrentPageVM),
+                typeof(BaseVM), typeof(PageHost),
                 new UIPropertyMetadata());
 
 
@@ -59,7 +59,7 @@ namespace JTA.JTASystem
         {
             // Get current values
             var currentPage = (ApplicationPage)d.GetValue(CurrentPageProperty);
-            var currentPageViewModel = d.GetValue(CurrentPageViewModelProperty);
+            var currentPageVM = d.GetValue(CurrentPageVMProperty);
 
             // Get the frames
             var newPageFrame = (d as PageHost).NewPage;
@@ -70,7 +70,7 @@ namespace JTA.JTASystem
             if (newPageFrame.Content is BasePage page && page.ToApplicationPage() == currentPage)
             {
                 // Just update the view model
-                page.ViewModelObject = currentPageViewModel;
+                page.VMObject = currentPageVM;
 
                 return value;
             }
@@ -100,7 +100,7 @@ namespace JTA.JTASystem
             //}
 
             // Set the new page content
-            newPageFrame.Content = currentPage.ToBasePage(currentPageViewModel);
+            newPageFrame.Content = currentPage.ToBasePage(currentPageVM);
 
             return value;
         }

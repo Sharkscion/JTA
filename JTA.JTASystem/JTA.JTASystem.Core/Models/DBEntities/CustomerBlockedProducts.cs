@@ -13,6 +13,7 @@ namespace JTA.JTASystem.Core
         [Key, Column(Order = 2)]
         public string ProductId { get; set; }
 
+        [ForeignKey("PersonId")]
         public virtual Customer Customer { get; set; }
 
         public virtual Product Product { get; set; }

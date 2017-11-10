@@ -2,38 +2,58 @@
 {
     public class Status
     {
-        public enum ContactInformation
+        public enum ContactInformationStatus
         {
-
-        }
-        public enum Order
-        {
-
+            Deactivated,
+            Active            
         }
 
-        public enum Address
+        public enum OrderStatus
         {
-
+            Canceled,
+            Delivered,
+            Returned,
+            Lost,
         }
 
-        public enum Customer
+        public enum AddressStatus
         {
-
+            Deactivated,
+            Active
         }
 
-        public enum Supplier
+        public enum CustomerStatus
         {
-
+            Archived,
+            Active
         }
 
-        public enum Product
+        public enum SupplierStatus
         {
-
+            Archived,
+            Active
         }
 
-        public enum Document
+        public enum ProductStatus
         {
+            Archived,
+            Active
+        }
 
+        public enum DocumentStatus
+        {
+            
+            Archived,
+            Delivered,
+            Posted,
+        }
+
+        public enum DocumentPaymentStatus
+        {
+            Paid = 1,
+            PartiallyPaid,
+            Unpaid,
+            Overdue
         }
     }
 }

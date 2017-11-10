@@ -8,10 +8,8 @@ namespace JTA.JTASystem.Core
         [Column(TypeName = "bit")]
         public bool IsDelivered { get; set; }
 
-        [Column(TypeName = "decimal(13,4)")]
         public decimal AddedVat { get; set; }
 
-        [Column(TypeName = "decimal(13,4)")]
         public decimal TotalSales { get; set; }
     }
 }

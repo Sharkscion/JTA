@@ -20,14 +20,14 @@ namespace JTA.JTASystem.Core
        // public static IUIManager UI => IoC.Get<IUIManager>();
 
         /// <summary>
-        /// A shortcut to access the <see cref="ApplicationViewModel"/>
+        /// A shortcut to access the <see cref="ApplicationVM"/>
         /// </summary>
-        public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
+        public static ApplicationVM Application => IoC.Get<ApplicationVM>();
 
         /// <summary>
-        /// A shortcut to access the <see cref="SettingsViewModel"/>
+        /// A shortcut to access the <see cref="SettingsVM"/>
         /// </summary>
-        public static MainPageViewModel MainPage => IoC.Get<MainPageViewModel>();
+        public static MainPageVM MainPage => IoC.Get<MainPageVM>();
 
         #endregion
 
@@ -41,19 +41,22 @@ namespace JTA.JTASystem.Core
         public static void Setup()
         {
             // Bind all required view models
-            BindViewModels();
+            BindVMs();
         }
 
         /// <summary>
         /// Binds all singleton view models
         /// </summary>
-        private static void BindViewModels()
+        private static void BindVMs()
         {
             // Bind to a single instance of Application view model
-            Kernel.Bind<ApplicationViewModel>().ToConstant(new ApplicationViewModel());
+            Kernel.Bind<ApplicationVM>().ToConstant(new ApplicationVM());
 
-            // Bind to a single instance of Settings view model
-            Kernel.Bind<MainPageViewModel>().ToConstant(new MainPageViewModel());
+            // Bind to a single instance of MainPage view model
+            Kernel.Bind<MainPageVM>().ToConstant(new MainPageVM());
+
+            // Bind to a single instance of Login view model
+            Kernel.Bind<LoginVM>().ToConstant(new LoginVM());
         }
 
         #endregion

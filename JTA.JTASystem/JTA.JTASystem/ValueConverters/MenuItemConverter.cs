@@ -8,10 +8,10 @@ namespace JTA.JTASystem
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value is BaseMenuItemViewModel baseMenu)
-                if(baseMenu.Content is TextIconMenuViewModel)
+            if (value is MenuItemVM baseMenu)
+                if(baseMenu.Content is TextIconEntryVM)
                     return new TextIconMenuItemControl { DataContext = baseMenu.Content};
-                else if(baseMenu.Content is ProfileMenuViewModel)
+                else if(baseMenu.Content is ProfileMenuVM)
                     return new ProfileMenuItemControl { DataContext = baseMenu.Content };
 
             return null;
